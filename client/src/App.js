@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import Saved from './pages/Saved';
+import Search from './pages/Search';
+import NotFound from './pages/NotFound';
 
 class App extends Component {
   render() {
@@ -11,10 +13,10 @@ class App extends Component {
         <div>
           <Nav />
           <Switch>
-            {/* <Route exact path="/" component={Books} /> */}
-            {/* <Route exact path="/books" component={Books} /> */}
+            <Route exact path="/" component={Search} />
+            <Route exact path="/saved" component={Saved} />
             {/* <Route exact path="/books/:id" component={Detail} /> */}
-            {/* <Route component={NoMatch} /> */}
+            <Route component={NotFound} />
           </Switch>
         </div>
       </Router>
