@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
 
+const APIKey = 'AIzaSyCyTk9xSgBKjTuDUp_RzGuSR4g8XiU70_s';
+
 // Matches with "/api/books"
 router.route("/")
   .get(booksController.findAll)
