@@ -15,13 +15,21 @@ export function List({ children }) {
 }
 
 export function ListItem(props) {
+  function handleImage() {
+    if (props.book.imageLinks === undefined || props.book.imageLinks.thumbnail === undefined) {
+      return "http://i.imgur.com/sJ3CT4V.gif";
+    }
+    else {
+      return props.book.imageLinks.thumbnail;
+    }
+  }
   return (
   <li className="list-group-item">
     <Container fluid>
       <Row>
         <Col size="md-2">
           <div style={style.imgFrame}>
-            <img src={props.book.imageLinks.thumbnail} style={style.thumbnail} />
+            <img src={handleImage()} style={style.thumbnail} />
             <div style={style.buttonContainer}>
               <ViewButton style={style.button} />
               <SaveButton style={style.button} />
@@ -54,7 +62,7 @@ const style = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   thumbnail: {
     width: '150px',
@@ -63,11 +71,12 @@ const style = {
     padding: '10px',
   },
   buttonContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: '5px',
   },
   button: {
-    margin: '5px',
-    padding: '5px',
-    border: "1px solid black",
+    margin: '10px',
   }
 }
