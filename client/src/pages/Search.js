@@ -6,6 +6,7 @@ import { Input, SubmitButton } from '../components/SearchForm';
 import API from '../utils/API';
 
 function Search() {
+    
     const [ queryState, setQueryState ] = useState('');
     const [ dataState, setDataState ] = useState([]);
 
@@ -29,7 +30,7 @@ function Search() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <div>{element.volumeInfo.title}</div>)}
+            {dataState.map((element) => <ListItem book={element.volumeInfo} />)}
           </List>
         </Col>
       </Row>
