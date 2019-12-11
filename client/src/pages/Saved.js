@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import { List, ListItem } from '../components/List';
 
 function Saved() {
+
+  const [ dataState, setDataState ] = useState([]);
+
   return (
     <Container fluid>
       <Row>
@@ -16,7 +19,7 @@ function Saved() {
       <Row>
         <Col size="md-12">
           <List>
-            <h1>LIST START</h1>
+            {dataState.map((element) => <ListItem book={element.volumeInfo} />)}
           </List>
         </Col>
       </Row>

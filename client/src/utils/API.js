@@ -21,7 +21,7 @@ export default {
   },
   googleAPI: {
     getBooks(query) {
-      return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+      return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40`);
     }
   }
 };
