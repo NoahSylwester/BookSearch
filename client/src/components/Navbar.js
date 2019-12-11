@@ -1,13 +1,16 @@
 import React from "react";
 
-function Nav() {
+function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <a className="navbar-brand" href="/">
-        React Reading List
+        BookFinder
       </a>
+      <ul className="nav navbar-nav">
+        <li><a href="/Saved">Saved</a></li>
+      </ul>
     </nav>
   );
 }
 
-export default Nav;
+export default Navbar;

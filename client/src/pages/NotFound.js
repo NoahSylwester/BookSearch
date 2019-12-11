@@ -21,4 +21,4 @@ function NotFound() {
   );
 }
 
-export default NoMatch;
+export default NotFound;
