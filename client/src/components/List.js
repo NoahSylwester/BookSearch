@@ -35,7 +35,7 @@ export function ListItem(props) {
             <img src={handleImage()} style={style.thumbnail} />
             <div style={style.buttonContainer}>
               <ViewButton href={props.book.previewLink || props.book.link} style={style.button} />
-              <SaveButton book={props.book} style={style.button} />
+              {props.saved === 'true' && <DeleteButton book={props.book} style={style.button} /> || <SaveButton book={props.book} style={style.button} />}
             </div>
           </div>
         </Col>

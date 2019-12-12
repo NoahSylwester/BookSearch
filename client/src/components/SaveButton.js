@@ -25,7 +25,7 @@ function SaveButton(props) {
         link: props.book.previewLink,
       })
       }
-    }
+      }
     >
       Save
     </span>

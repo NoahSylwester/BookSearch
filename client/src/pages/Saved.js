@@ -23,7 +23,7 @@ function Saved() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <ListItem book={element} />)}
+            {dataState.map((element) => <ListItem saved={'true'} book={element} />)}
           </List>
         </Col>
       </Row>
