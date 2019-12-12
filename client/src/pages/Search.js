@@ -43,7 +43,8 @@ function Search() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>Google Books Search</h1>
+            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '3rem', textAlign: 'center' }}>Google Books Search</h1>
+            <h4>Search for books using the GoogleBooks API</h4>
           </Jumbotron>
         </Col>
       </Row>
@@ -51,7 +52,7 @@ function Search() {
         <Col size="md-12">
           <Input onChange={event => setQueryState(event.target.value)} value={queryState} />
           <SubmitButton onClick={() => API.googleAPI.getBooks(queryState).then(res => setDataState(res.data.items))}>
-              Search for books
+              Search
           </SubmitButton>
         </Col>
       </Row>

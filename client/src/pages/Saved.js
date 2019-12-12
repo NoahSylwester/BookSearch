@@ -23,14 +23,15 @@ function Saved() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>Saved Books</h1>
+            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '3rem', textAlign: 'center' }}>Saved Books</h1>
+            <h4>Look at the books you've saved</h4>
           </Jumbotron>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <ListItem saved={'true'} onClick={queryDatabaseForSavedBooks} book={element} />)}
+            {dataState.length !== 0 ? dataState.map((element) => <ListItem saved={'true'} onClick={queryDatabaseForSavedBooks} book={element} />) : <h2 style={{textAlign: 'center'}}>Nothing saved yet.</h2>}
           </List>
         </Col>
       </Row>
