@@ -30,7 +30,7 @@ function Search() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <ListItem book={element.volumeInfo} />)}
+            {dataState.map((element) => <ListItem book={element.volumeInfo} id={element.id} />)}
           </List>
         </Col>
       </Row>

@@ -3,9 +3,12 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes");
+const logger = require('morgan');
 
 const mongoose = require("mongoose");
 
+// use morgan for logging requests
+app.use(logger("dev"));
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

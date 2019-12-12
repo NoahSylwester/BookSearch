@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import { List, ListItem } from '../components/List';
+import API from '../utils/API';
 
 function Saved() {
 
   const [ dataState, setDataState ] = useState([]);
+  useEffect(() => {
+    API.serverAPI.getBooks().then(res => setDataState(res.data));
+  }, [])
 
   return (
     <Container fluid>
@@ -19,7 +23,7 @@ function Saved() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <ListItem book={element.volumeInfo} />)}
+            {dataState.map((element) => <ListItem book={element} />)}
           </List>
         </Col>
       </Row>

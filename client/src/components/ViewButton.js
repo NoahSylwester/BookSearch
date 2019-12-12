@@ -4,9 +4,9 @@ import React from "react";
 // That way we don't have to define them all individually
 function ViewButton(props) {
   return (
-    <span className="btn btn-sm btn-primary view-btn" {...props} role="button" tabIndex="0">
+    <a className="btn btn-sm btn-primary view-btn" {...props} role="button" tabIndex="0">
       View
-    </span>
+    </a>
   );
 }
 

@@ -16,7 +16,10 @@ export function List({ children }) {
 
 export function ListItem(props) {
   function handleImage() {
-    if (props.book.imageLinks === undefined || props.book.imageLinks.thumbnail === undefined) {
+    if (props.book.image !== undefined) {
+      return props.book.image;
+    }
+    else if (props.book.imageLinks === undefined || props.book.imageLinks.thumbnail === undefined) {
       return "http://i.imgur.com/sJ3CT4V.gif";
     }
     else {
@@ -31,8 +34,8 @@ export function ListItem(props) {
           <div style={style.imgFrame}>
             <img src={handleImage()} style={style.thumbnail} />
             <div style={style.buttonContainer}>
-              <ViewButton style={style.button} />
-              <SaveButton style={style.button} />
+              <ViewButton href={props.book.previewLink || props.book.link} style={style.button} />
+              <SaveButton book={props.book} style={style.button} />
             </div>
           </div>
         </Col>
