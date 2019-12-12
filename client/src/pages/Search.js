@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import { List, ListItem } from '../components/List';
@@ -9,6 +9,34 @@ function Search() {
     
     const [ queryState, setQueryState ] = useState('');
     const [ dataState, setDataState ] = useState([]);
+    const [ savedDescriptionsState, setSavedDescriptionsState ] = useState([])
+    const [ savedState, setSavedState ] = useState([])
+    
+    useEffect(() => {
+      queryDatabaseForSavedBooks();
+    }, []);
+
+    const queryDatabaseForSavedBooks = () => {
+      API.serverAPI.getBooks().then(res => {
+        let temp = dataState;
+        setSavedDescriptionsState(res.data.map((element) => element.description));
+        setSavedState(res.data.map(element => element));
+        setDataState(temp);
+      })
+    }
+
+    const checkSaved = (element) => {
+      return savedDescriptionsState.includes(element.volumeInfo.description) ? "true" : "false";
+    }
+
+    const assignBookIfSaved = (element) => {
+      for (let i = 0; i < savedDescriptionsState.length; i++ ) {
+        if (savedDescriptionsState[i] === element.volumeInfo.description) {
+          return savedState[i];
+        }
+      }
+      return null;
+    }
 
   return (
     <Container fluid>
@@ -30,7 +58,7 @@ function Search() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <ListItem book={element.volumeInfo} id={element.id} />)}
+            {dataState.map((element) => <ListItem saved={checkSaved(element)} dbbook={assignBookIfSaved(element)} onClick={queryDatabaseForSavedBooks} book={element.volumeInfo} id={element.id} />)}
           </List>
         </Col>
       </Row>

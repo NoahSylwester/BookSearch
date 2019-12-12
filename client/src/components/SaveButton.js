@@ -23,7 +23,7 @@ function SaveButton(props) {
         description: props.book.description,
         image: handleImage(),
         link: props.book.previewLink,
-      })
+      }).then(() => props.onClick());
       }
       }
     >

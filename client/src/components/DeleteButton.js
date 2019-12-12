@@ -10,7 +10,10 @@ function DeleteButton(props) {
       {...props}
       role="button"
       tabIndex="0"
-      onClick={() => API.serverAPI.deleteBook(props.book._id)}
+      onClick={() => {
+        API.serverAPI.deleteBook(props.dbbook._id)
+        .then(() => props.onClick());
+      }}
     >
       Delete
     </span>

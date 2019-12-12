@@ -7,9 +7,16 @@ import API from '../utils/API';
 function Saved() {
 
   const [ dataState, setDataState ] = useState([]);
+  
   useEffect(() => {
-    API.serverAPI.getBooks().then(res => setDataState(res.data));
-  }, [])
+    queryDatabaseForSavedBooks();
+  }, []);
+
+  const queryDatabaseForSavedBooks = () => {
+    API.serverAPI.getBooks().then(res => {
+      setDataState(res.data);
+    })
+  }
 
   return (
     <Container fluid>
@@ -23,7 +30,7 @@ function Saved() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <ListItem saved={'true'} book={element} />)}
+            {dataState.map((element) => <ListItem saved={'true'} onClick={queryDatabaseForSavedBooks} book={element} />)}
           </List>
         </Col>
       </Row>
