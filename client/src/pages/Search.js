@@ -43,8 +43,8 @@ function Search() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '3rem', textAlign: 'center' }}>Google Books Search</h1>
-            <h4>Search for books using the GoogleBooks API</h4>
+            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '3rem', textAlign: 'center', textShadow: '0 0 20px black' }}>Readit</h1>
+            <h4 style={{ textShadow: '0 0 20px black' }}>Search for books using the GoogleBooks API</h4>
           </Jumbotron>
         </Col>
       </Row>

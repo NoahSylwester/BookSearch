@@ -23,8 +23,8 @@ function Saved() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '3rem', textAlign: 'center' }}>Saved Books</h1>
-            <h4>Look at the books you've saved</h4>
+            <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '3rem', textAlign: 'center', textShadow: '0 0 20px black' }}>Saved Books</h1>
+            <h4 style={{ textShadow: '0 0 20px black' }}>Look at the books you've saved</h4>
           </Jumbotron>
         </Col>
       </Row>
