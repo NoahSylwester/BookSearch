@@ -59,7 +59,7 @@ function Search() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.map((element) => <ListItem saved={checkSaved(element)} dbbook={assignBookIfSaved(element)} onClick={queryDatabaseForSavedBooks} book={element.volumeInfo} id={element.id} />)}
+            {dataState.length === 0 ? "Search something" : dataState.map((element) => <ListItem saved={checkSaved(element)} dbbook={assignBookIfSaved(element)} onClick={queryDatabaseForSavedBooks} book={element.volumeInfo} id={element.id} />)}
           </List>
         </Col>
       </Row>
