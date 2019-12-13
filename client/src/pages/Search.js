@@ -57,7 +57,7 @@ function Search() {
         </Col>
       </Row>
       <Row>
-        <Col size="md-12">
+        <Col size="md-12" black>
           <List>
             {dataState.length === 0 ? <h2 style={{textAlign: 'center', padding: '40px', color: 'white' }}>Search something!</h2> : dataState.map((element) => <ListItem saved={checkSaved(element)} dbbook={assignBookIfSaved(element)} onClick={queryDatabaseForSavedBooks} book={element.volumeInfo} id={element.id} />)}
           </List>
