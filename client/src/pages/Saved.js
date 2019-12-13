@@ -19,9 +19,9 @@ function Saved() {
   }
 
   return (
-    <Container fluid>
+    <Container fluid black>
       <Row>
-        <Col size="md-12">
+        <Col size="md-12" black>
           <Jumbotron>
             <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '3rem', textAlign: 'center', textShadow: '0 0 20px black' }}>Saved Books</h1>
             <h4 style={{ textShadow: '0 0 20px black' }}>Look at the books you've saved</h4>
@@ -29,9 +29,9 @@ function Saved() {
         </Col>
       </Row>
       <Row>
-        <Col size="md-12">
+        <Col size="md-12" black>
           <List>
-            {dataState.length !== 0 ? dataState.map((element) => <ListItem saved={'true'} onClick={queryDatabaseForSavedBooks} book={element} />) : <h2 style={{textAlign: 'center', padding: '20px'}}>Nothing saved yet.</h2>}
+            {dataState.length !== 0 ? dataState.map((element) => <ListItem saved={'true'} onClick={queryDatabaseForSavedBooks} book={element} />) : <h2 style={{textAlign: 'center', padding: '40px', color: 'white' }}>Nothing saved yet.</h2>}
           </List>
         </Col>
       </Row>

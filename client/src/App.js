@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div style={{ height: '100%' }}>
           <Navbar />
           <Switch>
             <Route exact path="/" component={Search} />

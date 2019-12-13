@@ -8,7 +8,7 @@ import DeleteButton from './DeleteButton';
 
 export function List({ children }) {
   return (
-    <div className="list-overflow-container">
+    <div className="list-overflow-container" style={{ background: 'black' }}>
       <ul className="list-group">{children}</ul>
     </div>
   );
@@ -27,7 +27,7 @@ export function ListItem(props) {
     }
   }
   return (
-  <li className="list-group-item">
+  <li className="list-group-item" style={style.listItem}>
     <Container fluid>
       <Row>
         <Col size="md-2">
@@ -60,6 +60,10 @@ export function ListItem(props) {
 }
 
 const style = {
+  listItem: {
+    margin: '10px',
+    borderRadius: '5px',
+  },
   imgFrame: {
     height: '100%',
     display: 'flex',

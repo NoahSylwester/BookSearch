@@ -39,7 +39,7 @@ function Search() {
     }
 
   return (
-    <Container fluid>
+    <Container fluid black>
       <Row>
         <Col size="md-12">
           <Jumbotron>
@@ -59,7 +59,7 @@ function Search() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.length === 0 ? <h2 style={{textAlign: 'center', padding: '20px'}}>Search something.</h2> : dataState.map((element) => <ListItem saved={checkSaved(element)} dbbook={assignBookIfSaved(element)} onClick={queryDatabaseForSavedBooks} book={element.volumeInfo} id={element.id} />)}
+            {dataState.length === 0 ? <h2 style={{textAlign: 'center', padding: '40px', color: 'white' }}>Search something!</h2> : dataState.map((element) => <ListItem saved={checkSaved(element)} dbbook={assignBookIfSaved(element)} onClick={queryDatabaseForSavedBooks} book={element.volumeInfo} id={element.id} />)}
           </List>
         </Col>
       </Row>
