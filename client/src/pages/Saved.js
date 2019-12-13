@@ -31,7 +31,7 @@ function Saved() {
       <Row>
         <Col size="md-12">
           <List>
-            {dataState.length !== 0 ? dataState.map((element) => <ListItem saved={'true'} onClick={queryDatabaseForSavedBooks} book={element} />) : <h2 style={{textAlign: 'center'}}>Nothing saved yet.</h2>}
+            {dataState.length !== 0 ? dataState.map((element) => <ListItem saved={'true'} onClick={queryDatabaseForSavedBooks} book={element} />) : <h2 style={{textAlign: 'center', padding: '20px'}}>Nothing saved yet.</h2>}
           </List>
         </Col>
       </Row>
