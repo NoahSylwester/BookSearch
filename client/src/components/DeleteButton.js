@@ -11,7 +11,11 @@ function DeleteButton(props) {
       role="button"
       tabIndex="0"
       onClick={() => {
+        props.dbbook ?
         API.serverAPI.deleteBook(props.dbbook._id)
+        .then(() => props.onClick())
+        :
+        API.serverAPI.deleteBook(props.book._id)
         .then(() => props.onClick());
       }}
     >
