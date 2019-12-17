@@ -50,10 +50,10 @@ function Search() {
       </Row>
       <Row>
         <Col size="md-12">
-          <Input onChange={event => setQueryState(event.target.value)} value={queryState} />
-          <SubmitButton onClick={() => API.googleAPI.getBooks(queryState).then(res => setDataState(res.data.items))}>
-              Search
-          </SubmitButton>
+          <form>
+            <Input onChange={event => setQueryState(event.target.value)} value={queryState} />
+            <SubmitButton onClick={(event) => {event.preventDefault(); API.googleAPI.getBooks(queryState).then(res => setDataState(res.data.items))}} />
+          </form>
         </Col>
       </Row>
       <Row>

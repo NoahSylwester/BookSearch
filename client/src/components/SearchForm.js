@@ -12,8 +12,6 @@ export function Input(props) {
 
 export function SubmitButton(props) {
   return (
-    <button {...props} style={{ float: "right", marginBottom: 10, width: '20%' }} className="btn btn-primary">
-      {props.children}
-    </button>
+    <input type="submit" value="Search" {...props} style={{ float: "right", marginBottom: 10, width: '20%' }} className="btn btn-primary" />
   );
 }
