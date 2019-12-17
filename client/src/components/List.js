@@ -47,7 +47,7 @@ export function ListItem(props) {
               {props.book.subtitle}
           </h5>
           <div>
-              by {props.book.authors}
+              by {props.book.authors ? props.book.authors.join(', ') : '[Author not given]'}
           </div>
           <div style={style.description}>
               {props.book.description}
