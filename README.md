@@ -9,13 +9,19 @@ Search for books using the Google Books API, and save them to your library for r
 
 ![splash image](./screenshots/screen1.png)
 
+#### Search for books
+
 Enter a search term, and see what books you can find.
 
 ![books image](./screenshots/screen2.png)
 
+#### Save the books you like
+
 If you see one you like, click 'save' to save it for later.
 
 ![save image](./screenshots/screen3.png)
+
+#### View your library
 
 Click on the 'Saved' tab in the navbar to look at all the saved books.
 
